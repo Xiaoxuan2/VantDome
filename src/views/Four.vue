@@ -1,18 +1,18 @@
 <template>
-    <div id="Two">
+    <div id="Four">
+        <div class="fh">
+
+<router-link  to="/Comdtiy">
+<van-nav-bar title="消息中心" left-text="" left-arrow></van-nav-bar>
+</router-link>
+        </div>
     <div class="two_nav">
       <van-tabs v-model="activeName">
-  <van-tab title="主线课" name="a">
+  <van-tab title="系统通知" name="a">
     <div class="tab_img">
-      <img src="../assets/28.png" alt="">
+      <img src="../assets/29.png" alt="">
       <ul>
         <li><p>暂时没有课程 </p></li>
-        <li><p>可以先试试体验课哦~</p> </li>
-        <li>
-          <a href="tel:4000162915">
-            
-            <van-button type="info">联系课程顾问
-          </van-button></a></li>
      
       </ul>
      
@@ -20,25 +20,23 @@
     </div>
 
   </van-tab>
-  <van-tab title="体验课" name="b">
+  <van-tab title="学习提醒" name="b">
      <div class="tab_img">
-      <img src="../assets/28.png" alt="">
+      <img src="../assets/29.png" alt="">
       <ul>
         <li><p>暂时没有课程 </p></li>
-        <li><p>可以先试试体验课哦~</p> </li>
-        <li><van-button type="info">联系课程顾问</van-button></li>
+      
       </ul>
      
       
     </div>
   </van-tab>
-  <van-tab title="公开课" name="c">
-     <div class="tab_img">
-      <img src="../assets/28.png" alt="">
+  <van-tab title="精彩活动" name="c">
+   <div class="tab_img">
+      <img src="../assets/29.png" alt="">
       <ul>
         <li><p>暂时没有课程 </p></li>
-        <li><p>想上课就去报名吧~</p> </li>
-        <li><van-button type="info">去报名</van-button></li>
+      
       </ul>
      
       
@@ -51,7 +49,7 @@
 </template>
 <script>
 export default {
-    name:"Two",
+    name:"Four",
      data() {
     return {
       activeName: 'a',
@@ -62,6 +60,10 @@ export default {
 
 
 <style scoped>
+#Four{
+    background: #F5F5F5;
+        height: 665px;
+}
 ::v-deep .van-tab--active {
     color: #0FAAF0;
     font-weight: 500;
@@ -82,6 +84,7 @@ export default {
    align-self: center;
 }
 .tab_img ul{
+    display:flex;
   align-self: center;
   text-align: center;font-size: 0.15rem;
 
@@ -97,15 +100,14 @@ export default {
   margin-top: 0.9888888rem;
 }
  ::v-deep .van-tabs__line {
-    background: none;
-     position: absolute;
+    position: absolute;
     bottom: 15px;
     left: 0;
-     z-index: 1;
+    z-index: 1;
     width: 40px;
-    height: 6px;
-    border: 3px solid #0FAAF0;
-    border-radius: 0 0 50% 50%/0 0 100% 100% ;
-    border-top: none;
+    height: 3px;
+    background-color: #0FAAF0;
+    border-radius: 3px;
 }
+
 </style>

@@ -1,3 +1,33 @@
+// const webpack = require("webpack");
+
+// module.exports = {
+
+//     entry: './index.js',
+
+//     output: {
+
+//         path: path.join(__dirname, './dist'),
+
+//         publicPath: '/dist/',
+
+//         filename: 'index.js'
+
+//     },
+
+//   plugins: [
+
+//         new webpack.ProvidePlugin({
+
+//             jQuery: 'jquery',
+
+//             $: 'jquery'
+
+//         })
+
+//     ]
+
+// },
+
 module.exports = {
   publicPath:'./',
   lintOnSave: false, // eslint-loader 是否在保存的时候检查
@@ -10,6 +40,7 @@ module.exports = {
           }
         }
   },
+  
   //反向代理
   // devServer: {
   //   // 环境配置

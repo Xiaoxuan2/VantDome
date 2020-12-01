@@ -96,12 +96,12 @@ export default {
     /* display: flex; */
     /* box-sizing: border-box; */
     width: 80%;
-    padding: 10px 16px;
-    border-radius: 12px;
+    padding:0.133333rem 0.2rem;
+    border-radius:0.16rem;
     overflow: hidden;
     color: #323233;
-    font-size: 21px;
-    line-height: 52px;
+  font-size: 0.2rem;
+    /* line-height:0.333333rem; */
     background-color: #F6F6F8;
  
     align-self: center;

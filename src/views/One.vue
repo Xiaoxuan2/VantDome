@@ -15,13 +15,19 @@
      </div>
      <div class="subjectone">
            
-      <p>绘本馆</p> 
+      <p class="tilti">绘本馆</p> 
       <p class="gengduo">
     <span>更多</span><van-icon name="arrow"/>
       </p>
         <div class="imgVueal">
             <van-row type="flex" justify="space-around">
-            <van-col span="6"> <img src="../assets/20.png" alt=""></van-col>
+            <van-col span="6">
+                
+               
+             <router-link to="/Five">
+              <img src="../assets/20.png" alt="">
+             </router-link>   
+                </van-col>
             <van-col span="6"><img src="../assets/21.png" alt=""></van-col>
             <van-col span="6"><img src="../assets/23.png" alt=""></van-col>
             </van-row>
@@ -29,15 +35,40 @@
      </div>
       <div class="subjectone">
            
-      <p>公开课</p> 
+      <p class="tilti">公开课</p> 
     
-        <div class="imgVueal">
-            <van-row type="flex" justify="space-around">
-            <van-col span="6"> <img src="../assets/20.png" alt=""></van-col>
-            <van-col span="6"><img src="../assets/21.png" alt=""></van-col>
-            <van-col span="6"><img src="../assets/23.png" alt=""></van-col>
-            </van-row>
+        <div class="imgVueal imgtext">
+           <van-swipe :loop="false" width="185" class="lunbo">
+  <van-swipe-item class="bannerimg_pa">
+      <img src="../assets/24.png" alt=""> 
+        <p>Whales Phonics-Consonant...</p>
+         <p>鲸鱼自然拼读课程</p>   
+         <p>7247人报名</p>
+  </van-swipe-item>
+  <van-swipe-item class="bannerimg_pa">
+      <img src="../assets/25.png" alt="">
+      <p>Whales Phonics-Consonant...</p>
+         <p>鲸鱼自然拼读课程</p>   
+         <p>7247人报名</p>
+      </van-swipe-item>
+  <van-swipe-item class="bannerimg_pa">
+      <img src="../assets/26.png" alt="">
+      <p>Whales Phonics-Consonant...</p>
+         <p>鲸鱼自然拼读课程</p>   
+         <p>7247人报名</p>
+      </van-swipe-item>
+        <van-swipe-item>
+   
+      </van-swipe-item>
+      
+</van-swipe>
             
+        </div>
+        <div class="foot_text">
+                <p><img src="../assets/27.png" alt=""></p>
+      
+            <van-divider style="color:#E5E5E5;">原版精读小班课，从零培养优等生</van-divider>
+       
         </div>
        
      </div>
@@ -50,7 +81,7 @@ export default {
     methods: {
         submit(){
             this.$router.push({
-                name:"Three"
+                name:"Four"
             })
         }
     },
@@ -58,7 +89,59 @@ export default {
 </script>
 
 <style scoped>
+.lunbo{
+ width: 400px;
+}
+.van-divider {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    color: #969799;
+    font-size: 0.12rem;
+    line-height: 0.32rem;
+    border-style: solid;
+    border-width: 0px;
+    margin: 0.16rem 0px 0px 0.8rem;
+}
+.foot_text{
+    height: 1.8rem;
+} 
+.foot_text p{
+    text-align: center
+}
+.foot_text p>img{
+        width: 44%;
+    margin: 0.32rem 0px 0px 0.8rem;
+}
+::v-deep .van-swipe__indicators i{
+   display: none;
+}
+.imgtext{
+    overflow: hidden;
+        height: 2.11rem;
+            /* width: 675px; */
+}
+.bannerimg_pa>p{
+    font-size: 0.14rem;
+}
+.bannerimg_pa>p:nth-of-type(1){
+        margin-top: 10px;
+}
+.bannerimg_pa>p:nth-of-type(3){
+        margin-top: 10px;
+        color: #B4B4B4;
 
+}
+.bannerimg_pa{
+     padding: 0.09rem 0.09rem !important;
+    border: 0.01rem solid #F2F2F2;
+    box-shadow: #E9E9E8 0px 0px 2px 1px;
+    margin:  0.01rem 0.093333rem !important;
+    border-radius: 0.05rem;
+
+}
 .van-col--6 {
     width: 30%;
 }
@@ -94,8 +177,8 @@ export default {
        background: white;
        flex-wrap: wrap;
 }
-.subjectone p,.gengduo{
-  align-self: center;
+.subjectone .tilti,.gengduo{
+    align-self: center;
       margin: 0.08rem 0.186667rem !important;
 }
 .gengduo{
@@ -123,4 +206,5 @@ export default {
         width: 89%;
     margin-left: 42px !important;
 }
+
 </style>

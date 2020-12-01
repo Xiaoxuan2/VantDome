@@ -10,14 +10,24 @@ export default new Router({
       path: '/Loing',
       name: 'Loing',
       component: () => import('./views/Loing.vue')
+    }
+    ,
+    {
+      path: '/Four',
+      name: 'Four',
+      component: () => import('./views/Four.vue'),
+    },{
+      path: '/Five',
+      name: 'Five',
+      component: () => import('./views/Five.vue'),
+    }
+    ,{
+      path: '/Six',
+      name: 'Six',
+      component: () => import('./views/Six.vue'),
     },
     {
-      path: '/Three',
-      name: 'Three',
-      component: () => import('./views/Three.vue')
-    }
-    , {
-      path: '/Comdtiy',
+      path: '/Comdtiy', //
       name: 'Comdtiy',
       component: () => import('./views/Comdtiy.vue'),
       children: [
@@ -33,6 +43,12 @@ export default new Router({
           component: () => import('./views/Two.vue')
 
         },
+        
+          {
+            path: '/Three',
+            name: 'Three',
+            component: () => import('./views/Three.vue')
+          },
 
         {
           path: "/Comdtiy", //默认显示组件     
