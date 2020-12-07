@@ -1,5 +1,5 @@
 
-// 底部公共组件
+
 <template>
     <div id="One">
         
@@ -40,13 +40,13 @@
         <div class="imgVueal imgtext">
            <van-swipe :loop="false" width="185" class="lunbo">
   <van-swipe-item class="bannerimg_pa">
-      <img src="../assets/24.png" alt=""> 
+   <img src="../assets/24.png" alt=""  @click="Eightsubimt">
         <p>Whales Phonics-Consonant...</p>
          <p>鲸鱼自然拼读课程</p>   
          <p>7247人报名</p>
   </van-swipe-item>
   <van-swipe-item class="bannerimg_pa">
-      <img src="../assets/25.png" alt="">
+      <img src="../assets/25.png" alt="" >
       <p>Whales Phonics-Consonant...</p>
          <p>鲸鱼自然拼读课程</p>   
          <p>7247人报名</p>
@@ -82,6 +82,11 @@ export default {
         submit(){
             this.$router.push({
                 name:"Four"
+            })
+        },
+        Eightsubimt(){
+               this.$router.push({
+                name:"Eight"
             })
         }
     },

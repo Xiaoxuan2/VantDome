@@ -1,15 +1,25 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-Vue.use(Router)
-
-export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location, onResolve, onReject) {
+  if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject)
+  return originalPush.call(this, location).catch(err => err)
+}//解决版本问题const originalPush = Router.prototype.push
+ 
+const router = new VueRouter({
+  
+ routes: [
+  //  {
+  //     // path: '/Loing',
+  //     // name: 'Loing',
+  //     // component: () => import('./views/Loing.vue')
+  //   }
+   // ,
     {
-      path: '/Loing',
-      name: 'Loing',
-      component: () => import('./views/Loing.vue')
+      path: '/Loing1',
+      name: 'Loing1',
+      component: () => import('./views/Loing1.vue')
     }
     ,
     {
@@ -25,6 +35,14 @@ export default new Router({
       path: '/Six',
       name: 'Six',
       component: () => import('./views/Six.vue'),
+    },{
+      path: '/Seven',
+      name: 'Seven',
+      component: () => import('./views/Seven.vue'),
+    },{
+      path: '/Eight',
+      name: 'Eight',
+      component: () => import('./views/Eight.vue'),
     },
     {
       path: '/Comdtiy', //
@@ -59,8 +77,25 @@ export default new Router({
     },
     {
       path: "/", //默认显示组件     
-      redirect: "/Loing"
+      redirect: "/Loing1"
       //重定向，页面默认显示Loing组件登录页面 
     }
   ]
+})
+export default router;
+
+router.beforeEach((to, from, next) => {// 当前路由
+  let isLogin= JSON.parse(localStorage.getItem("user"));
+  if(isLogin){
+    next() // 放行的意思  
+  }else{
+    if(to.path==='/Loing1'){ // 要去的路由
+         next()
+          //登录成功后 放行 
+    }else{
+      next('/Loing1')//没有登录的情况下一直都在登录页面
+    }
+  }
+  
+  
 })

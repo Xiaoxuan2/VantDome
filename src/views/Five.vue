@@ -5,8 +5,8 @@
     left-text="" left-arrow  @click-left="submint"> 
 
    <template #right>
-
-    <van-icon name="info-o" size="18" style="right: 28px;" />
+<router-link to="/Seven"><van-icon name="info-o" size="18" style="right: 28px; top:3px;"/></router-link>
+ 
     <van-icon name="share-o" 
  title="显示分享面板"
   @click="showShare = true" />
@@ -80,7 +80,7 @@ export default {
         this.$router.push({
             name:"Six"
         })
-    }
+    },
   },
 }
 </script>

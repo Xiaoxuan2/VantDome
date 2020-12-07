@@ -1,76 +1,64 @@
 <template>
-    <div>
-        <div class="fh">
-            <van-nav-bar title="听绘本" left-text="" left-arrow 
-              @click-left="submit">
-  
-</van-nav-bar>
-        </div>
-        <div class="cli">
-           
-<van-image-preview v-model="show" :images="images"  @change="onChange" >
-          
-  <template v-slot:index>{{ index }}/7</template>
-</van-image-preview>
-        </div>
-       
-        
+  <div id="Six">
+    <div class="fh">
+      <van-nav-bar title="听绘本" left-text left-arrow @click-left="submit1"></van-nav-bar>
     </div>
+    <div class="cli">
+   <van-swipe @change="onChange">
+  <van-swipe-item>
+    <img src="../assets/33.png" alt="">
+  </van-swipe-item>
+  <van-swipe-item>  <img src="../assets/33.png" alt=""></van-swipe-item>
+  <van-swipe-item>  <img src="../assets/34.png" alt=""></van-swipe-item>
+  <van-swipe-item>  <img src="../assets/35.png" alt=""></van-swipe-item>
+    <van-swipe-item>  <img src="../assets/36.png" alt=""></van-swipe-item>
+  <van-swipe-item>  <img src="../assets/37.png" alt=""></van-swipe-item>
+ <van-swipe-item>  <img src="../assets/38.png" alt=""></van-swipe-item>
+  <template #indicator>
+    <div class="custom-indicator">
+      {{ current + 1 }}/7
+    </div>
+  </template>
+</van-swipe>
+
+    </div>
+  </div>
 </template>
 <script>
 export default {
-    name:"Six",
-     data() {
+  name: "Six",
+  data() {
     return {
-      show: true,
-      index: 0,
-      images: [
-        '../assets/31.png',
-        '../assets/32.png',
-        '../assets/31.png',
-        '../assets/32.png',
-        '../assets/31.png',
-        '../assets/32.png',
-        '../assets/32.png',
-      ],
+        current: 0,
+    
     };
   },
   methods: {
     onChange(index) {
-      this.index = index+1;
+      this.current  = index;
     },
-  },
-  submit:function(){
-      $this.$router.black();
+     submit1() {
+    console.log(111);
+    this.$router.go(-1);
   }
-}
+  },
+ 
+};
 </script>
 <style scoped>
 
-::v-deep .van-image-preview {
-    position: fixed;
-    top: 45px;
-    left: 0;
-    width: 100%;
-    height: 93%;
-   
-}
-::v-deep .van-image-preview{
-    display: block  !important;
-}
- ::v-deep .van-image-preview__index {
+.custom-indicator {
     position: absolute;
-    top: 16px;
-    left: 50%;
-    color: black;}
-    ::v-deep .van-image-preview__overlay {
-    background: none;
-}
-
- ::v-deep .van-overlay {
-    top: 47px;
-    height: 93%;
-   
-    background:none;
-}
+       right: 172px;
+    top: 0px;
+    padding: 2px 5px;
+    font-size: 18px;
+    /* background: rgba(0, 0, 0, 0.1); */
+  }
+  .van-swipe-item img{
+        width: 95%;
+    height: 580px;
+        margin-left: 7px;
+    margin-top: 25px;
+  }
 </style>

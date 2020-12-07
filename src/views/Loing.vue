@@ -1,7 +1,7 @@
 <template>
-  <div class="Loing">
+  <div class="Loing" style='style=overflow:-Scroll;overflow-x:hidden'>
           
-          <div class="one"> <img src="../assets/18.png" alt=""><strong>手 机 验 证 码 登 录</strong></div> 
+          <div class="one"> <img src="../assets/18.png" alt=""><strong>手机验证码登录</strong></div> 
           
           <div class="text">
             登录鲸鱼外教培优，成为英语优等生
@@ -17,7 +17,7 @@
     <router-link to="/Comdtiy"> <van-button round type="info">下一步</van-button></router-link>  
       </div>
         <div class="center">
-          <center> <a href="">密码登录</a></center>
+         <router-link to="/Loing1"><center> <a href="">密码登录</a></center></router-link> 
          
         </div>
         <div class="foot">
@@ -27,16 +27,24 @@
   </div>
 </template>
 <script>
+
 export default {
+  name:"Loing",
    data() {
     return {
       tel: '',
        checked: true,
     };
   },
+  
 }
 </script>
 <style scoped>
+::v-deep .van-field__label{
+    font-size: 16px;}
+    ::v-deep .van-field__control {
+         font-size: 12px;
+    }
 .Loing{
   display: flex;
   flex-direction: column;
@@ -59,7 +67,7 @@ export default {
 }
 .btn{
       margin-left: 0.3rem !important;
-          margin-top: 0.3rem !important;
+          margin-top: 0.1rem !important;
 }
 .van-button--normal {
     padding: 0 15px;
@@ -109,7 +117,7 @@ export default {
 }
 .text{
   color: #A1A5A7;
-  font-size: 0.17rem;
+  font-size: 0.15rem;
   margin-left: 0.5rem !important;
  margin-top: 0.12rem !important;
   
@@ -153,7 +161,7 @@ export default {
     background: -webkit-gradient(linear, left top, right top, from(#03a9f4), color-stop(#f441a5), color-stop(#ffeb3b), to(#03a9f4));
     background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
     background-size: 400%;
-    width: 3.333333rem !important;
+    width: 3rem !important;
     height: 0.5rem !important;
     line-height: 0.333333rem;
     color: #fff;

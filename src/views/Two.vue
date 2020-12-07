@@ -1,7 +1,7 @@
 <template>
     <div id="Two">
     <div class="two_nav">
-      <van-tabs v-model="activeName">
+      <van-tabs v-model="activeName" swipeable >
   <van-tab title="主线课" name="a">
     <div class="tab_img">
       <img src="../assets/28.png" alt="">
